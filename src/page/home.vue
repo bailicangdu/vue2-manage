@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    dsfsfsdfsd
+    home
   </div>
 </template>
 

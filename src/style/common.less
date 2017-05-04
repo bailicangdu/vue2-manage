@@ -5,7 +5,6 @@ body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, l
     font-style: normal;
     text-decoration: none;
     border: none;
-    color: #333;
     box-sizing: border-box;
     font-family: "Microsoft Yahei",sans-serif;
     -webkit-tap-highlight-color:transparent;
@@ -48,10 +47,13 @@ textarea { -webkit-appearance: none;}
 html,body{
     height: 100%;
     width: 100%;
-    background-color: #F5F5F5;
+    // background-color: #F5F5F5;
 }
 
-
+.fillcontain{
+    height: 100%;
+    width: 100%;
+}
 .clear:after{
     content: '';
     display: block;
@@ -91,8 +93,4 @@ html,body{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-.paddingTop{
-    padding-top: 1.95rem;
 }
