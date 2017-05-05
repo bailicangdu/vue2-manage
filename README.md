@@ -1,7 +1,7 @@
 
-## 前言
+## what ?
 
-此项目是 [node-elm](https://github.com/bailicangdu/node-elm) 的后台管理系统，管理商铺及会员信息。
+此项目是 [node-elm](https://github.com/bailicangdu/node-elm) 的后台管理系统。
 
 
 ## 说明

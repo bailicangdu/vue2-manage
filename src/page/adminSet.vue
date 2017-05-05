@@ -1,6 +1,6 @@
 <template>
     <div class="fillcontain">
-        home
+        adminSet
     </div>
 </template>
 
