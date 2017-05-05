@@ -1,10 +1,10 @@
 
-## what ?
+# project
 
 此项目是 [node-elm](https://github.com/bailicangdu/node-elm) 的后台管理系统。
 
 
-## 说明
+# 说明
 
 >  如果对您对此项目有兴趣，可以点 "Star" 支持一下 谢谢！ ^_^
 
@@ -24,9 +24,9 @@ vue2 + vuex + vue-router + webpack + ES6/7 + less + element
 
 
 ```
-git clone https://github.com/bailicangdu/back-manage  
+git clone https://github.com/bailicangdu/vue2-manage  
 
-cd back-manage  
+cd vue2-manage  
 
 npm install
 
@@ -35,6 +35,25 @@ npm run dev
 访问: http://localhost:8002
 
 ```
+
+# 功能列表
+
+- [ ] 登陆/注销
+- [ ] 权限验证
+- [ ] 总体数据展示
+- [ ] 添加商铺
+- [ ] 添加商品
+- [ ] 管理用户
+- [ ] 管理商铺
+- [ ] 地区管理
+- [ ] 管理员设置
+- [ ] 图表📈
+- [ ] 上传文件
+- [ ] 系统设置
+- [ ] 富文本编辑器
+- [ ] Markdown编辑器
+
+
 
 ## License
 
