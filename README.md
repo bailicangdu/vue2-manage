@@ -60,6 +60,10 @@ npm run dev
 
 ![](http://cangdu.org/files/images/manage_login.png)
 
+
+![](http://cangdu.org/files/images/manage_home.png)
+
+
 ## License
 
 [MIT](https://mit-license.org/)
