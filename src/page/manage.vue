@@ -1,5 +1,5 @@
 <template>
-	<div class="home_page fillcontain">
+	<div class="manage_page fillcontain">
 		<el-row style="height: 100%;">
 	  		<el-col :span="4"  style="min-height: 100%; background-color: #324057;">
 				<el-menu default-active="manage" style="min-height: 100%;" theme="dark" router>
@@ -53,7 +53,7 @@
 
 <style lang="less" scoped>
 	@import '../style/mixin';
-	.home_page{
+	.manage_page{
 		
 	}
 </style>
