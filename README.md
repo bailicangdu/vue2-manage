@@ -56,14 +56,14 @@ npm run dev
 
 # 项目截图
 
-### 登陆
+## 登陆
 
 ![](http://cangdu.org/files/images/manage_login.png)
 
-### 首页
+## 首页
 ![](http://cangdu.org/files/images/manage_home.png)
 
 
-## License
+### License
 
 [MIT](https://mit-license.org/)
