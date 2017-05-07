@@ -54,6 +54,11 @@ npm run dev
 - [ ] Markdown编辑器
 
 
+# 项目截图
+
+### 登陆
+
+![](http://cangdu.org/files/images/manage_login.png)
 
 ## License
 
