@@ -17,7 +17,7 @@
 
 ## 技术栈
 
-vue2 + vuex + vue-router + webpack + ES6/7 + less + element
+vue2 + vuex + vue-router + webpack + ES6/7 + less + element-ui
 
 
 ## 项目运行
@@ -56,14 +56,14 @@ npm run dev
 
 # 项目截图
 
-### 登陆
+## 登陆
 
 ![](http://cangdu.org/files/images/manage_login.png)
 
-### 首页
+## 首页
 ![](http://cangdu.org/files/images/manage_home.png)
 
 
-## License
+### License
 
 [MIT](https://mit-license.org/)
