@@ -66,4 +66,4 @@ npm run dev
 
 ### License
 
-[MIT](https://mit-license.org/)
+[MIT](https://github.com/bailicangdu/vue2-manage/blob/master/LICENSE)

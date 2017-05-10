@@ -72,33 +72,33 @@
 					<el-form-item label="上传店铺头像">
 						<el-upload
 						  class="avatar-uploader"
-						  action="//jsonplaceholder.typicode.com/posts/"
+						  :action="baseUrl + '/shopping/addimg'"
 						  :show-file-list="false"
 						  :on-success="handleShopAvatarScucess"
 						  :before-upload="beforeAvatarUpload">
-						  <img v-if="formData.image_path" :src="formData.image_path" class="avatar">
+						  <img v-if="formData.image_path" :src="baseUrl + formData.image_path" class="avatar">
 						  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
 						</el-upload>
 					</el-form-item>
 					<el-form-item label="上传营业执照">
 						<el-upload
 						  class="avatar-uploader"
-						  action="//jsonplaceholder.typicode.com/posts/"
+						  :action="baseUrl + '/shopping/addimg'"
 						  :show-file-list="false"
 						  :on-success="handleBusinessAvatarScucess"
 						  :before-upload="beforeAvatarUpload">
-						  <img v-if="formData.business_license_image" :src="formData.business_license_image" class="avatar">
+						  <img v-if="formData.business_license_image" :src="baseUrl + formData.business_license_image" class="avatar">
 						  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
 						</el-upload>
 					</el-form-item>
 					<el-form-item label="上传餐饮服务许可证">
 						<el-upload
 						  class="avatar-uploader"
-						  action="//jsonplaceholder.typicode.com/posts/"
+						  :action="baseUrl + '/shopping/addimg'"
 						  :show-file-list="false"
 						  :on-success="handleServiceAvatarScucess"
 						  :before-upload="beforeAvatarUpload">
-						  <img v-if="formData.catering_service_license_image" :src="formData.catering_service_license_image" class="avatar">
+						  <img v-if="formData.catering_service_license_image" :src="baseUrl + formData.catering_service_license_image" class="avatar">
 						  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
 						</el-upload>
 					</el-form-item>
@@ -157,6 +157,7 @@
 <script>
     import headTop from '@/components/headTop'
     import {cityGuess, addShop, searchplace} from '@/api/getData'
+    import {baseUrl} from '@/config/env'
     export default {
     	data(){
     		return {
@@ -213,7 +214,8 @@
 		        	icon_name: '减',
 		        	name: '满减优惠',
 		        	description: '满30减5，满60减8',
-			    }]
+			    }],
+			    baseUrl,
     		}
     	},
     	components: {
@@ -252,13 +254,25 @@
 		    	console.log(address)
 		    },
 			handleShopAvatarScucess(res, file) {
-				this.formData.image_path = URL.createObjectURL(file.raw);
+				if (res.status == 1) {
+					this.formData.image_path = res.image_path;
+				}else{
+					this.$message.error('上传图片失败！');
+				}
 			},
 			handleBusinessAvatarScucess(res, file) {
-				this.formData.business_license_image = URL.createObjectURL(file.raw);
+				if (res.status == 1) {
+					this.formData.business_license_image = res.image_path;
+				}else{
+					this.$message.error('上传图片失败！');
+				}
 			},
 			handleServiceAvatarScucess(res, file) {
-				this.formData.catering_service_license_image = URL.createObjectURL(file.raw);
+				if (res.status == 1) {
+					this.formData.catering_service_license_image = res.image_path;
+				}else{
+					this.$message.error('上传图片失败！');
+				}
 			},
 			beforeAvatarUpload(file) {
 				const isRightType = (file.type === 'image/jpeg') || (file.type === 'image/png');
@@ -270,7 +284,7 @@
 				if (!isLt2M) {
 					this.$message.error('上传头像图片大小不能超过 2MB!');
 				}
-				return isJPG && isLt2M;
+				return isRightType && isLt2M;
 			},
 			tableRowClassName(row, index) {
 		        if (index === 1) {
