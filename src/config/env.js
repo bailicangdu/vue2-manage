@@ -9,10 +9,10 @@ let baseUrl;
 let routerMode;
 
 if (process.env.NODE_ENV == 'development') {
-	baseUrl = '';
+	baseUrl = 'http://localhost:8001';
 	routerMode = 'hash'
 }else{
-	baseUrl = 'http://cangdu.org';
+	baseUrl = 'http://cangdu.org:8001';
 	routerMode = 'hash'
 }
 
