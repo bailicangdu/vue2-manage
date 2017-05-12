@@ -37,7 +37,7 @@
 					</el-submenu>
 				</el-menu>
 			</el-col>
-			<el-col :span="20" style="height: 100%;overflow-y: auto;">
+			<el-col :span="20" style="height: 100%;overflow: auto;">
 				<router-view></router-view>
 			</el-col>
 		</el-row>

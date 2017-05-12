@@ -72,7 +72,7 @@
 					<el-form-item label="上传店铺头像">
 						<el-upload
 						  class="avatar-uploader"
-						  :action="baseUrl + '/shopping/addimg'"
+						  :action="baseUrl + '/shopping/addimg/shop'"
 						  :show-file-list="false"
 						  :on-success="handleShopAvatarScucess"
 						  :before-upload="beforeAvatarUpload">
@@ -83,7 +83,7 @@
 					<el-form-item label="上传营业执照">
 						<el-upload
 						  class="avatar-uploader"
-						  :action="baseUrl + '/shopping/addimg'"
+						  :action="baseUrl + '/shopping/addimg/shop'"
 						  :show-file-list="false"
 						  :on-success="handleBusinessAvatarScucess"
 						  :before-upload="beforeAvatarUpload">
@@ -94,7 +94,7 @@
 					<el-form-item label="上传餐饮服务许可证">
 						<el-upload
 						  class="avatar-uploader"
-						  :action="baseUrl + '/shopping/addimg'"
+						  :action="baseUrl + '/shopping/addimg/shop'"
 						  :show-file-list="false"
 						  :on-success="handleServiceAvatarScucess"
 						  :before-upload="beforeAvatarUpload">

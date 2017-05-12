@@ -38,11 +38,11 @@ npm run dev
 
 # 功能列表
 
-- [ ] 登陆/注销
+- [x] 登陆/注销
+- [x] 添加商铺
+- [x] 添加商品
 - [ ] 权限验证
 - [ ] 总体数据展示
-- [ ] 添加商铺
-- [ ] 添加商品
 - [ ] 管理用户
 - [ ] 管理商铺
 - [ ] 地区管理
@@ -65,6 +65,9 @@ npm run dev
 
 ## 添加商店
 ![](http://cangdu.org/files/images/addshop.png)
+
+## 添加食品
+![](http://cangdu.org/files/images/addfood.png)
 
 
 ### License
