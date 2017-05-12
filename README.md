@@ -63,6 +63,9 @@ npm run dev
 ## 首页
 ![](http://cangdu.org/files/images/manage_home.png)
 
+## 添加商店
+![](http://cangdu.org/files/images/addshop.png)
+
 
 ### License
 

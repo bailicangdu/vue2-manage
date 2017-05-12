@@ -354,6 +354,17 @@
 						Object.assign(this.formData, {activities: this.activities})
 						try{
 							let result = await addShop(this.formData);
+							if (result.status == 1) {
+								this.$message({
+					            	type: 'success',
+					            	message: '添加成功'
+					          	});
+							}else{
+								this.$message({
+					            	type: 'error',
+					            	message: result.message
+					          	});
+							}
 							console.log(result)
 						}catch(err){
 							console.error(err)
