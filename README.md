@@ -58,16 +58,16 @@ npm run dev
 
 ## 登陆
 
-![](http://cangdu.org/files/images/manage_login.png)
+![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/manage_login.png)
 
 ## 首页
-![](http://cangdu.org/files/images/manage_home.png)
+![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/manage_home.png)
 
 ## 添加商店
-![](http://cangdu.org/files/images/addshop.png)
+![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/addshop.png)
 
 ## 添加食品
-![](http://cangdu.org/files/images/addfood.png)
+![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/addfood.png)
 
 
 ### License
