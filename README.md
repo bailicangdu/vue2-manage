@@ -1,7 +1,7 @@
 
 # project
 
-此项目是 [node-elm](https://github.com/bailicangdu/node-elm) 的后台管理系统。
+此项目是 [后台项目node-elm](https://github.com/bailicangdu/node-elm) 的数据管理系统。配合[前台项目vue2-elm](https://github.com/bailicangdu/vue2-elm)组成一个 后台系统 + 数据管理 + 前台展示 的完整流程。
 
 
 # 说明
@@ -12,7 +12,15 @@
 
 >  开发环境 macOS 10.12.4  nodejs 6.10.0
 
->  传送门：[前端项目地址](https://github.com/bailicangdu/vue2-elm)  [后台项目地址](https://github.com/bailicangdu/node-elm)  [原生APP项目地址](https://github.com/bailicangdu/RN-elm)
+## 项目推荐:
+
+vue + vuex 大型单页面开发：[vue2-elm](https://github.com/bailicangdu/vue2-elm)
+
+vue + vuex 入门项目：[vue2-happyfri](https://github.com/bailicangdu/vue2-happyfri)
+
+react + redux 完整项目和个人总结：[react-pxq](https://github.com/bailicangdu/react-pxq)
+
+nodejs + mongodb 构筑电商后台系统：[node-elm](https://github.com/bailicangdu/node-elm)
 
 
 ## 技术栈
@@ -42,7 +50,7 @@ npm run dev
 - [x] 添加商铺
 - [x] 添加商品
 - [ ] 权限验证
-- [ ] 总体数据展示
+- [ ] 数据展示
 - [ ] 管理用户
 - [ ] 管理商铺
 - [ ] 地区管理
