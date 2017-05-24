@@ -68,9 +68,6 @@ npm run dev
 
 ![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/manage_login.png)
 
-## 首页
-![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/manage_home.png)
-
 ## 添加商店
 ![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/addshop.png)
 
