@@ -3,20 +3,21 @@
  * 
  * baseUrl: 域名地址
  * routerMode: 路由模式
+ * baseImgPath: 图片存放地址
  * 
  */
 let baseUrl; 
-let routerMode;
+let routerMode = 'hash';
+let baseImgPath = 'http://images.cangdu.org/';
 
 if (process.env.NODE_ENV == 'development') {
 	baseUrl = 'http://localhost:8001';
-	routerMode = 'hash'
 }else{
 	baseUrl = 'http://cangdu.org:8001';
-	routerMode = 'hash'
 }
 
 export {
 	baseUrl,
 	routerMode,
+	baseImgPath
 }

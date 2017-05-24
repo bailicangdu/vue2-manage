@@ -10,7 +10,8 @@ const addShop = r => require.ensure([], () => r(require('@/page/addShop')), 'add
 const addGoods = r => require.ensure([], () => r(require('@/page/addGoods')), 'addGoods');
 const userList = r => require.ensure([], () => r(require('@/page/userList')), 'userList');
 const shopList = r => require.ensure([], () => r(require('@/page/shopList')), 'shopList');
-const area = r => require.ensure([], () => r(require('@/page/area')), 'area');
+const foodList = r => require.ensure([], () => r(require('@/page/foodList')), 'foodList');
+const orderList = r => require.ensure([], () => r(require('@/page/orderList')), 'orderList');
 const adminList = r => require.ensure([], () => r(require('@/page/adminList')), 'adminList');
 const visitor = r => require.ensure([], () => r(require('@/page/visitor')), 'visitor');
 const newMember = r => require.ensure([], () => r(require('@/page/newMember')), 'newMember');
@@ -52,9 +53,13 @@ export default new Router({
 				component: shopList,
 				meta: ['数据管理', '商家列表'],
 			},{
-				path: '/area',
-				component: area,
-				meta: ['数据管理', '地区管理'],
+				path: '/foodList',
+				component: foodList,
+				meta: ['数据管理', '食品列表'],
+			},{
+				path: '/orderList',
+				component: orderList,
+				meta: ['数据管理', '订单列表'],
 			},{
 				path: '/adminList',
 				component: adminList,

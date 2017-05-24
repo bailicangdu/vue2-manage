@@ -1,7 +1,7 @@
 
 # project
 
-此项目是 [后台项目node-elm](https://github.com/bailicangdu/node-elm) 的数据管理系统。配合[前台项目vue2-elm](https://github.com/bailicangdu/vue2-elm)组成一个 后台系统 + 数据管理 + 前台展示 的完整流程。
+此项目是后台项目[node-elm](https://github.com/bailicangdu/node-elm) 的数据管理系统。配合前台项目[vue2-elm](https://github.com/bailicangdu/vue2-elm)组成一个 后台系统 + 数据管理 + 前台展示 的完整流程。
 
 
 # 说明
@@ -49,11 +49,11 @@ npm run dev
 - [x] 登陆/注销
 - [x] 添加商铺
 - [x] 添加商品
+- [x] 数据展示
+- [x] 管理用户
+- [x] 管理商铺
+- [x] 食品管理
 - [ ] 权限验证
-- [ ] 数据展示
-- [ ] 管理用户
-- [ ] 管理商铺
-- [ ] 地区管理
 - [ ] 管理员设置
 - [ ] 图表📈
 - [ ] 上传文件

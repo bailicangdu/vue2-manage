@@ -50,11 +50,11 @@
 					<el-form-item label="上传店铺头像">
 						<el-upload
 						  class="avatar-uploader"
-						  :action="baseUrl + '/shopping/addimg/food'"
+						  :action="baseUrl + '/v1/addimg/food'"
 						  :show-file-list="false"
 						  :on-success="uploadImg"
 						  :before-upload="beforeImgUpload">
-						  <img v-if="foodForm.image_path" :src="baseUrl + foodForm.image_path" class="avatar">
+						  <img v-if="foodForm.image_path" :src="baseImgPath + foodForm.image_path" class="avatar">
 						  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
 						</el-upload>
 					</el-form-item>
@@ -137,12 +137,13 @@
 <script>
  	import headTop from '@/components/headTop'
     import {getCategory, addCategory, addFood} from '@/api/getData'
-    import {baseUrl} from '@/config/env'
+    import {baseUrl, baseImgPath} from '@/config/env'
     export default {
     	data(){
     		return {
     			baseUrl,
-    			restaurant_id: 3,
+    			baseImgPath,
+    			restaurant_id: null,
     			categoryForm: {
     				categoryList: [],
     				categorySelect: '',
@@ -188,10 +189,19 @@
 		        }
     		}
     	},
+    	beforeRouteEnter (to, from, next) {
+		    if (to.query.restaurant_id) {
+		    	next()
+		    }else{
+		    	alert('请先选择店铺');
+		    	next('/shopList');
+		    }
+		},
     	components: {
     		headTop,
     	},
-    	mounted(){
+    	created(){
+    		this.restaurant_id = this.$route.query.restaurant_id;
     		this.initData();
     	},
     	computed: {

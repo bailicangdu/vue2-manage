@@ -26,6 +26,13 @@
 					<el-form-item label="店铺标语" prop="promotion_info">
 						<el-input v-model="formData.promotion_info"></el-input>
 					</el-form-item>
+					<el-form-item label="店铺分类">
+						<el-cascader
+						  :options="categoryOptions"
+						  v-model="selectedCategory"
+						  change-on-select
+						></el-cascader>
+					</el-form-item>
 					<el-form-item label="店铺特点" style="white-space: nowrap;">
 						<span>品牌保证</span>
 						<el-switch on-text="" off-text="" v-model="formData.is_premium"></el-switch>
@@ -69,36 +76,37 @@
 							}">
 						</el-time-select>
 					</el-form-item>
+					
 					<el-form-item label="上传店铺头像">
 						<el-upload
 						  class="avatar-uploader"
-						  :action="baseUrl + '/shopping/addimg/shop'"
+						  :action="baseUrl + '/v1/addimg/shop'"
 						  :show-file-list="false"
 						  :on-success="handleShopAvatarScucess"
 						  :before-upload="beforeAvatarUpload">
-						  <img v-if="formData.image_path" :src="baseUrl + formData.image_path" class="avatar">
+						  <img v-if="formData.image_path" :src="baseImgPath + formData.image_path" class="avatar">
 						  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
 						</el-upload>
 					</el-form-item>
 					<el-form-item label="上传营业执照">
 						<el-upload
 						  class="avatar-uploader"
-						  :action="baseUrl + '/shopping/addimg/shop'"
+						  :action="baseUrl + '/v1/addimg/shop'"
 						  :show-file-list="false"
 						  :on-success="handleBusinessAvatarScucess"
 						  :before-upload="beforeAvatarUpload">
-						  <img v-if="formData.business_license_image" :src="baseUrl + formData.business_license_image" class="avatar">
+						  <img v-if="formData.business_license_image" :src="baseImgPath + formData.business_license_image" class="avatar">
 						  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
 						</el-upload>
 					</el-form-item>
 					<el-form-item label="上传餐饮服务许可证">
 						<el-upload
 						  class="avatar-uploader"
-						  :action="baseUrl + '/shopping/addimg/shop'"
+						  :action="baseUrl + '/v1/addimg/shop'"
 						  :show-file-list="false"
 						  :on-success="handleServiceAvatarScucess"
 						  :before-upload="beforeAvatarUpload">
-						  <img v-if="formData.catering_service_license_image" :src="baseUrl + formData.catering_service_license_image" class="avatar">
+						  <img v-if="formData.catering_service_license_image" :src="baseImgPath + formData.catering_service_license_image" class="avatar">
 						  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
 						</el-upload>
 					</el-form-item>
@@ -156,8 +164,8 @@
 
 <script>
     import headTop from '@/components/headTop'
-    import {cityGuess, addShop, searchplace} from '@/api/getData'
-    import {baseUrl} from '@/config/env'
+    import {cityGuess, addShop, searchplace, foodCategory} from '@/api/getData'
+    import {baseUrl, baseImgPath} from '@/config/env'
     export default {
     	data(){
     		return {
@@ -183,6 +191,7 @@
        	 			image_path: '',
        	 			business_license_image: '',
        	 			catering_service_license_image: '',
+       	 			
 		        },
 		        rules: {
 					name: [
@@ -216,6 +225,9 @@
 		        	description: '满30减5，满60减8',
 			    }],
 			    baseUrl,
+			    baseImgPath,
+			    categoryOptions: [],
+			    selectedCategory: ['快餐便当', '简餐']
     		}
     	},
     	components: {
@@ -228,6 +240,27 @@
     		async initData(){
     			try{
     				this.city = await cityGuess();
+    				const categories = await foodCategory();
+    				categories.forEach(item => {
+    					if (item.sub_categories.length) {
+    						const addnew = {
+    							value: item.name,
+						        label: item.name,
+						        children: []
+    						}
+    						item.sub_categories.forEach((subitem, index) => {
+    							if (index == 0) {
+    								return
+    							}
+    							addnew.children.push({
+    								value: subitem.name,
+						        	label: subitem.name,
+    							})
+    						})
+    						this.categoryOptions.push(addnew)
+
+    					}
+    				})
     			}catch(err){
     				console.error(err);
     			}
@@ -251,7 +284,7 @@
 		    addressSelect(address){
 		    	this.formData.latitude = address.latitude;
 		    	this.formData.longitude = address.longitude;
-		    	console.log(address)
+		    	console.log(this.formData.latitude, this.formData.longitude)
 		    },
 			handleShopAvatarScucess(res, file) {
 				if (res.status == 1) {
@@ -351,7 +384,9 @@
 		    submitForm(formName) {
 				this.$refs[formName].validate(async (valid) => {
 					if (valid) {
-						Object.assign(this.formData, {activities: this.activities})
+						Object.assign(this.formData, {activities: this.activities}, {
+							category: this.selectedCategory.join('/')
+						})
 						try{
 							let result = await addShop(this.formData);
 							if (result.status == 1) {

@@ -43,5 +43,115 @@ const addCategory = data => fetch('/shopping/addcategory', data, 'POST');
 const addFood = data => fetch('/shopping/addfood', data, 'POST');
 
 
-export { cityGuess, addShop, searchplace, getCategory, addCategory, addFood }
+/**
+ * category 种类列表
+ */
+
+const foodCategory = (latitude, longitude) => fetch('/shopping/v2/restaurant/category');
+
+/**
+ * 获取餐馆列表
+ */
+
+const getResturants = data => fetch('/shopping/restaurants', data);
+
+/**
+ * 获取餐馆详细信息
+ */
+
+const getResturantDetail = restaurant_id => fetch('/shopping/restaurant/' + restaurant_id);
+
+/**
+ * 获取餐馆数量
+ */
+
+const getResturantsCount = () => fetch('/shopping/restaurants/count');
+
+/**
+ * 更新餐馆信息
+ */
+
+const updateResturant = data => fetch('/shopping/updateshop', data, 'POST');
+
+/**
+ * 删除餐馆
+ */
+
+const deleteResturant = restaurant_id => fetch('/shopping/restaurant/' + restaurant_id, {}, 'DELETE');
+
+/**
+ * 获取食品列表
+ */
+
+const getFoods = data => fetch('/shopping/v2/foods', data);
+
+/**
+ * 获取食品数量
+ */
+
+const getFoodsCount = data => fetch('/shopping/v2/foods/count', data);
+
+
+/**
+ * 获取menu列表
+ */
+
+const getMenu = data => fetch('/shopping/v2/menu', data);
+
+/**
+ * 获取menu列表
+ */
+
+const getMenuById = category_id => fetch('/shopping/v2/menu/' + category_id);
+
+/**
+ * 更新食品信息
+ */
+
+const updateFood = data => fetch('/shopping/v2/updatefood', data, 'POST');
+
+/**
+ * 删除食品
+ */
+
+const deleteFood = food_id => fetch('/shopping/v2/food/' + food_id, {}, 'DELETE');
+
+/**
+ * 获取用户列表
+ */
+
+const getUserList = data => fetch('/v1/users/list', data);
+
+/**
+ * 获取用户数量
+ */
+
+const getUserCount = data => fetch('/v1/users/count', data);
+
+/**
+ * 获取订单列表
+ */
+
+const getOrderList = data => fetch('/bos/orders', data);
+
+/**
+ * 获取订单数量
+ */
+
+const getOrderCount = data => fetch('/bos/orders/count', data);
+
+/**
+ * 获取订单数量
+ */
+
+const getUserInfo = user_id => fetch('/v1/user/' + user_id);
+
+/**
+ * 获取订单数量
+ */
+
+const getAddressById = address_id => fetch('/v1/addresse/' + address_id);
+
+
+export { cityGuess, addShop, searchplace, getCategory, addCategory, addFood, foodCategory ,getResturants, getResturantDetail, getResturantsCount, updateResturant, deleteResturant, getFoods, getFoodsCount, getMenu, updateFood, getMenuById, deleteFood, getUserList, getUserCount, getOrderList, getOrderCount, getUserInfo, getAddressById}
 
