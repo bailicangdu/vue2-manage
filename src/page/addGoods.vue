@@ -143,7 +143,7 @@
     		return {
     			baseUrl,
     			baseImgPath,
-    			restaurant_id: null,
+    			restaurant_id: 1,
     			categoryForm: {
     				categoryList: [],
     				categorySelect: '',
@@ -189,19 +189,19 @@
 		        }
     		}
     	},
-    	beforeRouteEnter (to, from, next) {
-		    if (to.query.restaurant_id) {
-		    	next()
-		    }else{
-		    	alert('请先选择店铺');
-		    	next('/shopList');
-		    }
-		},
     	components: {
     		headTop,
     	},
     	created(){
-    		this.restaurant_id = this.$route.query.restaurant_id;
+    		if (this.$route.query.restaurant_id) {
+    			this.restaurant_id = this.$route.query.restaurant_id;
+    		}else{
+    			this.restaurant_id = Math.ceil(Math.random()*10);
+    			this.$message({
+	            	type: 'error',
+	            	message: '请至商家列表页选择一个商铺'
+	          	});
+    		}
     		this.initData();
     	},
     	computed: {

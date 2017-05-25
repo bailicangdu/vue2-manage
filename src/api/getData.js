@@ -13,6 +13,38 @@ const login = data => fetch('/admin/login', data, 'POST');
 const signout = () => fetch('/admin/singout');
 
 /**
+ * api请求量
+ */
+
+const apiCount = date => fetch('/statis/api/' + date + '/count');
+
+/**
+ * 所有api请求量
+ */
+
+const apiAllCount = () => fetch('/statis/api/all/count');
+
+
+/**
+ * 所有api请求信息
+ */
+
+const apiAllRecord = () => fetch('/statis/api/all');
+
+/**
+ * 用户注册量求量
+ */
+
+const userCount = date => fetch('/statis/user/' + date + '/count');
+
+/**
+ * 某一天订单数量
+ */
+
+const orderCount = date => fetch('/statis/order/' + date + '/count');
+
+
+/**
  * 超级管理员列表
  */
 
@@ -176,5 +208,5 @@ const getUserInfo = user_id => fetch('/v1/user/' + user_id);
 const getAddressById = address_id => fetch('/v1/addresse/' + address_id);
 
 
-export {login, signout, adminList, adminCount, cityGuess, addShop, searchplace, getCategory, addCategory, addFood, foodCategory ,getResturants, getResturantDetail, getResturantsCount, updateResturant, deleteResturant, getFoods, getFoodsCount, getMenu, updateFood, getMenuById, deleteFood, getUserList, getUserCount, getOrderList, getOrderCount, getUserInfo, getAddressById}
+export {login, signout, apiCount, apiAllCount, apiAllRecord, userCount, orderCount, adminList, adminCount, cityGuess, addShop, searchplace, getCategory, addCategory, addFood, foodCategory ,getResturants, getResturantDetail, getResturantsCount, updateResturant, deleteResturant, getFoods, getFoodsCount, getMenu, updateFood, getMenuById, deleteFood, getUserList, getUserCount, getOrderList, getOrderCount, getUserInfo, getAddressById}
 

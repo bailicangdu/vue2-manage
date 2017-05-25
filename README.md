@@ -1,10 +1,12 @@
 
 # project
 
-此项目是后台项目[node-elm](https://github.com/bailicangdu/node-elm) 的数据管理系统。配合前台项目[vue2-elm](https://github.com/bailicangdu/vue2-elm)组成一个 后台系统 + 数据管理 + 前台展示 的完整流程。
+此项目是后台项目[node-elm](https://github.com/bailicangdu/node-elm) 的数据管理系统。
 
 
 # 说明
+
+>  vue + element-ui 构建的后台管理系统
 
 >  如果对您对此项目有兴趣，可以点 "Star" 支持一下 谢谢！ ^_^
 
@@ -12,15 +14,10 @@
 
 >  开发环境 macOS 10.12.4  nodejs 6.10.0
 
-## 项目推荐:
+>  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
 
-vue + vuex 大型单页面开发：[vue2-elm](https://github.com/bailicangdu/vue2-elm)
+>  传送门：[前端项目地址](https://github.com/bailicangdu/vue2-elm)  、 [后台系统地址](https://github.com/bailicangdu/node-elm)  、 [原生APP项目地址](https://github.com/bailicangdu/RN-elm)
 
-vue + vuex 入门项目：[vue2-happyfri](https://github.com/bailicangdu/vue2-happyfri)
-
-react + redux 完整项目和个人总结：[react-pxq](https://github.com/bailicangdu/react-pxq)
-
-nodejs + mongodb 构筑电商后台系统：[node-elm](https://github.com/bailicangdu/node-elm)
 
 
 ## 技术栈
@@ -61,10 +58,6 @@ npm run dev
 
 
 # 项目截图
-
-## 登陆
-
-![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/manage_login.png)
 
 ## 添加商店
 ![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/addshop.png)
