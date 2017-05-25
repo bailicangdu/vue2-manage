@@ -319,12 +319,12 @@
                         });
                         this.tableData.splice(index, 1);
                     }else{
-                        throw new Error('删除食品失败')
+                        throw new Error(res.message)
                     }
                 }catch(err){
                     this.$message({
                         type: 'error',
-                        message: '删除食品失败'
+                        message: err.message
                     });
                     console.error('删除食品失败')
                 }
@@ -363,9 +363,8 @@
                     }else{
                         this.$message({
                             type: 'error',
-                            message: '更新食品信息失败'
+                            message: res.message
                         });
-                        throw new Error('更新餐馆信息失败')
                     }
                 }catch(err){
                     console.log('更新餐馆信息失败', err);

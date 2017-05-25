@@ -1,5 +1,28 @@
 import fetch from '@/config/fetch'
 
+/**
+ * 登陆
+ */
+
+const login = data => fetch('/admin/login', data, 'POST');
+
+/**
+ * 退出
+ */
+
+const signout = () => fetch('/admin/singout');
+
+/**
+ * 超级管理员列表
+ */
+
+const adminList = data => fetch('/admin/all', data);
+
+/**
+ * 超级管理员列表
+ */
+
+const adminCount = () => fetch('/admin/count');
 
 /**
  * 获取定位城市
@@ -153,5 +176,5 @@ const getUserInfo = user_id => fetch('/v1/user/' + user_id);
 const getAddressById = address_id => fetch('/v1/addresse/' + address_id);
 
 
-export { cityGuess, addShop, searchplace, getCategory, addCategory, addFood, foodCategory ,getResturants, getResturantDetail, getResturantsCount, updateResturant, deleteResturant, getFoods, getFoodsCount, getMenu, updateFood, getMenuById, deleteFood, getUserList, getUserCount, getOrderList, getOrderCount, getUserInfo, getAddressById}
+export {login, signout, adminList, adminCount, cityGuess, addShop, searchplace, getCategory, addCategory, addFood, foodCategory ,getResturants, getResturantDetail, getResturantsCount, updateResturant, deleteResturant, getFoods, getFoodsCount, getMenu, updateFood, getMenuById, deleteFood, getUserList, getUserCount, getOrderList, getOrderCount, getUserInfo, getAddressById}
 

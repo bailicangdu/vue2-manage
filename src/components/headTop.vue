@@ -16,14 +16,31 @@
 </template>
 
 <script>
+	import {signout} from '@/api/getData'
     export default {
     	created(){
     		
     	},
 		methods: {
-			handleCommand(command) {
-				this.$message(command);
-			}
+			async handleCommand(command) {
+				if (command == 'home') {
+					this.$router.push('/manage');
+				}else if(command == 'singout'){
+					const res = await signout()
+					if (res.status == 1) {
+						this.$message({
+	                        type: 'success',
+	                        message: '退出成功'
+	                    });
+	                    this.$router.push('/');
+					}else{
+						this.$message({
+	                        type: 'error',
+	                        message: res.message
+	                    });
+					}
+				}
+			},
 		}
     }
 </script>

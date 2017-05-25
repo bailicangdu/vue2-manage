@@ -16,12 +16,15 @@
 				    	<el-button type="primary" @click="submitForm('loginForm')" class="submit_btn">登陆</el-button>
 				  	</el-form-item>
 				</el-form>
+				<p class="tip">未登录过的新用户，自动注册成为普通管理员</p>
+				<p class="tip">已注册过的用户不能重新注册</p>
 	  		</section>
 	  	</transition>
   	</div>
 </template>
 
 <script>
+	import {login} from '@/api/getData'
 	export default {
 	    data(){
 			return {
@@ -44,10 +47,22 @@
 			this.showLogin = true;
 		},
 		methods: {
-			submitForm(formName) {
-				this.$refs[formName].validate((valid) => {
+			async submitForm(formName) {
+				this.$refs[formName].validate(async (valid) => {
 					if (valid) {
-						this.$router.push('manage')
+						const res = await login({user_name: this.loginForm.username, password: this.loginForm.password})
+						if (res.status == 1) {
+							this.$message({
+		                        type: 'success',
+		                        message: '登录成功'
+		                    });
+							this.$router.push('manage')
+						}else{
+							this.$message({
+		                        type: 'error',
+		                        message: res.message
+		                    });
+						}
 					} else {
 						this.$notify.error({
 							title: '错误',
@@ -88,6 +103,10 @@
 			width: 100%;
 			font-size: 16px;
 		}
+	}
+	.tip{
+		font-size: 12px;
+		color: #666;
 	}
 	.form-fade-enter-active, .form-fade-leave-active {
 	  	transition: all 1s;
