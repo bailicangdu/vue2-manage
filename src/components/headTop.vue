@@ -6,7 +6,7 @@
 			<el-breadcrumb-item v-for="(item, index) in $route.meta" key="index">{{item}}</el-breadcrumb-item>
 		</el-breadcrumb>
 		<el-dropdown @command="handleCommand" menu-align='start'>
-			<img src="../assets/img/avator.jpg" class="avator">
+			<img :src="baseImgPath + adminInfo.avatar" class="avator">
 			<el-dropdown-menu slot="dropdown">
 				<el-dropdown-item command="home">首页</el-dropdown-item>
 				<el-dropdown-item command="singout">退出</el-dropdown-item>
@@ -17,11 +17,25 @@
 
 <script>
 	import {signout} from '@/api/getData'
+	import {baseImgPath} from '@/config/env'
+	import {mapActions, mapState} from 'vuex'
+
     export default {
+    	data(){
+    		return {
+    			baseImgPath,
+    		}
+    	},
     	created(){
-    		
+    		if (!this.adminInfo.id) {
+    			this.getAdminData()
+    		}
+    	},
+    	computed: {
+    		...mapState(['adminInfo']),
     	},
 		methods: {
+			...mapActions(['getAdminData']),
 			async handleCommand(command) {
 				if (command == 'home') {
 					this.$router.push('/manage');

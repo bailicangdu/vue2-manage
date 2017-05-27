@@ -35,12 +35,12 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 		}
 		
 		try {
-			var response = await fetch(url, requestConfig);
-			var responseJson = await response.json();
+			const response = await fetch(url, requestConfig);
+			const responseJson = await response.json();
+			return responseJson
 		} catch (error) {
 			throw new Error(error)
 		}
-		return responseJson
 	} else {
 		return new Promise((resolve, reject) => {
 			let requestObj;

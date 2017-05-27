@@ -2,12 +2,19 @@
     <div>
         <head-top></head-top>
 		<section class="data_section">
-			<header class="section_title">当日数据统计</header>
-			<el-row :gutter="20">
-				<el-col :span="8"><div class="data_list"><span class="data_num">{{apiCount}}</span> API请求量</div></el-col>
-				<el-col :span="8"><div class="data_list"><span class="data_num">{{userCount}}</span> 新注册用户</div></el-col>
-				<el-col :span="8"><div class="data_list"><span class="data_num">{{orderCount}}</span> 新增订单</div></el-col>
+			<header class="section_title">数据统计</header>
+			<el-row :gutter="20" style="margin-bottom: 10px;">
+                <el-col :span="6"><div class="data_list today_head"><span class="data_num head">当日数据：</span></div></el-col>
+				<el-col :span="6"><div class="data_list"><span class="data_num">{{apiCount}}</span> API请求量</div></el-col>
+				<el-col :span="6"><div class="data_list"><span class="data_num">{{userCount}}</span> 新增用户</div></el-col>
+				<el-col :span="6"><div class="data_list"><span class="data_num">{{orderCount}}</span> 新增订单</div></el-col>
 			</el-row>
+            <el-row :gutter="20">
+                <el-col :span="6"><div class="data_list all_head"><span class="data_num head">总数据：</span></div></el-col>
+                <el-col :span="6"><div class="data_list"><span class="data_num">{{allApiCount}}</span> API请求量</div></el-col>
+                <el-col :span="6"><div class="data_list"><span class="data_num">{{allUserCount}}</span> 注册用户</div></el-col>
+                <el-col :span="6"><div class="data_list"><span class="data_num">{{allOrderCount}}</span> 订单</div></el-col>
+            </el-row>
 		</section>
 		<tendency :sevenDate='sevenDate' :sevenDay='sevenDay'></tendency>
     </div>
@@ -17,13 +24,16 @@
 	import headTop from '../components/headTop'
 	import tendency from '../components/tendency' 
 	import dtime from 'time-formater'
-	import {apiCount, userCount, orderCount} from '@/api/getData'
+	import {apiCount, userCount, orderCount, apiAllCount, getUserCount, getOrderCount} from '@/api/getData'
     export default {
     	data(){
     		return {
     			apiCount: null,
     			userCount: null,
     			orderCount: null,
+                allApiCount: null,
+                allUserCount: null,
+                allOrderCount: null,
     			sevenDay: [],
     			sevenDate: [[],[],[]],
     		}
@@ -43,11 +53,14 @@
     	methods: {
     		async initData(){
     			const today = dtime().format('YYYY-MM-DD')
-    			Promise.all([apiCount(today), userCount(today), orderCount(today)])
+    			Promise.all([apiCount(today), userCount(today), orderCount(today), apiAllCount(), getUserCount(), getOrderCount()])
     			.then(res => {
     				this.apiCount = res[0].count;
     				this.userCount = res[1].count;
     				this.orderCount = res[2].count;
+                    this.allApiCount = res[3].count;
+                    this.allUserCount = res[4].count;
+                    this.allOrderCount = res[5].count;
     			}).catch(err => {
     				console.log(err)
     			})
@@ -64,12 +77,10 @@
     				const resArr = [[],[],[]];
 					res.forEach((item, index) => {
 						if (item.status == 1) {
-							//const count = index < 7 ? item.count/100 + 'x100' : item.count;
 							resArr[Math.floor(index/7)].push(item.count)
 						}
 					})
 					this.sevenDate = resArr;
-					console.log(this.sevenDate)
     			}).catch(err => {
     				console.log(err)
     			})
@@ -92,10 +103,25 @@
 			text-align: center;
 			font-size: 14px;
 			color: #666;
-			.data_num{
-				color: #333;
-				font-size: 26px;
-			}
-		}
+            border-radius: 6px;
+            background: #E5E9F2;
+            .data_num{
+                color: #333;
+                font-size: 26px;
+
+            }
+            .head{
+                border-radius: 6px;
+                font-size: 24px;
+                padding: 0 10px;
+                color: #fff;
+            }
+        }
+        .today_head{
+            background: #13CE66;
+        }
+        .all_head{
+            background: #20A0FF;
+        }
 	}
 </style>

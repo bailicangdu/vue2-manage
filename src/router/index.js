@@ -16,7 +16,7 @@ const adminList = r => require.ensure([], () => r(require('@/page/adminList')), 
 const visitor = r => require.ensure([], () => r(require('@/page/visitor')), 'visitor');
 const newMember = r => require.ensure([], () => r(require('@/page/newMember')), 'newMember');
 const uploadImg = r => require.ensure([], () => r(require('@/page/uploadImg')), 'uploadImg');
-const uploadFile = r => require.ensure([], () => r(require('@/page/uploadFile')), 'uploadFile');
+const vueEdit = r => require.ensure([], () => r(require('@/page/vueEdit')), 'vueEdit');
 const adminSet = r => require.ensure([], () => r(require('@/page/adminSet')), 'adminSet');
 const sendMessage = r => require.ensure([], () => r(require('@/page/sendMessage')), 'sendMessage');
 const explain = r => require.ensure([], () => r(require('@/page/explain')), 'explain');
@@ -67,7 +67,7 @@ export default new Router({
 			},{
 				path: '/visitor',
 				component: visitor,
-				meta: ['图表', '访问数据'],
+				meta: ['图表', '用户分布'],
 			},{
 				path: '/newMember',
 				component: newMember,
@@ -75,11 +75,11 @@ export default new Router({
 			},{
 				path: '/uploadImg',
 				component: uploadImg,
-				meta: ['上传', '上传图片'],
+				meta: ['文本编辑', 'MarkDown'],
 			},{
-				path: '/uploadFile',
-				component: uploadFile,
-				meta: ['上传', '上传文件'],
+				path: '/vueEdit',
+				component: vueEdit,
+				meta: ['编辑', '文本编辑'],
 			},{
 				path: '/adminSet',
 				component: adminSet,

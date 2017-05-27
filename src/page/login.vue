@@ -17,14 +17,16 @@
 				  	</el-form-item>
 				</el-form>
 				<p class="tip">未登录过的新用户，自动注册成为普通管理员</p>
-				<p class="tip">已注册过的用户不能重新注册</p>
+				<p class="tip">已注册过的用户可直接登录</p>
 	  		</section>
 	  	</transition>
   	</div>
 </template>
 
 <script>
-	import {login} from '@/api/getData'
+	import {login, getAdminInfo} from '@/api/getData'
+	import {mapActions, mapState} from 'vuex'
+
 	export default {
 	    data(){
 			return {
@@ -45,8 +47,15 @@
 		},
 		mounted(){
 			this.showLogin = true;
+			if (!this.adminInfo.id) {
+    			this.getAdminData()
+    		}
+		},
+		computed: {
+			...mapState(['adminInfo']),
 		},
 		methods: {
+			...mapActions(['getAdminData']),
 			async submitForm(formName) {
 				this.$refs[formName].validate(async (valid) => {
 					if (valid) {
@@ -73,6 +82,17 @@
 					}
 				});
 			},
+		},
+		watch: {
+			adminInfo: function (newValue){
+				if (newValue.id) {
+					this.$message({
+                        type: 'success',
+                        message: '检测到您之前登录过，将自动登录'
+                    });
+					this.$router.push('manage')
+				}
+			}
 		}
 	}
 </script>

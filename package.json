@@ -18,7 +18,9 @@
     "element-ui": "^1.2.9",
     "time-formater": "^1.0.1",
     "vue": "^2.2.6",
+    "vue-quill-editor": "^2.2.1",
     "vue-router": "^2.3.1",
+    "vue-simplemde": "^0.3.8",
     "vuex": "^2.3.1"
   },
   "devDependencies": {

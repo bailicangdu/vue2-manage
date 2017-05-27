@@ -197,10 +197,25 @@
     			this.restaurant_id = this.$route.query.restaurant_id;
     		}else{
     			this.restaurant_id = Math.ceil(Math.random()*10);
-    			this.$message({
-	            	type: 'error',
-	            	message: '请至商家列表页选择一个商铺'
-	          	});
+    			this.$msgbox({
+		          title: '提示',
+		          message: '添加食品需要选择一个商铺，先去就去选择商铺吗？',
+		          showCancelButton: true,
+		          confirmButtonText: '确定',
+		          cancelButtonText: '取消',
+		          beforeClose: (action, instance, done) => {
+		            if (action === 'confirm') {
+		              this.$router.push('/shopList');
+		              done();
+		            } else {
+		            	this.$message({
+				            type: 'info',
+				            message: '取消'
+				        });
+		              	done();
+		            }
+		          }
+		        })
     		}
     		this.initData();
     	},

@@ -7,7 +7,7 @@
  * 
  */
 let baseUrl; 
-let routerMode = 'hash';
+let routerMode = 'history';
 let baseImgPath = 'http://images.cangdu.org/';
 
 if (process.env.NODE_ENV == 'development') {
