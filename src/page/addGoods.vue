@@ -47,7 +47,7 @@
 					<el-form-item label="食品详情" prop="description">
 						<el-input v-model="foodForm.description"></el-input>
 					</el-form-item>
-					<el-form-item label="上传店铺头像">
+					<el-form-item label="上传食品图片">
 						<el-upload
 						  class="avatar-uploader"
 						  :action="baseUrl + '/v1/addimg/food'"

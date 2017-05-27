@@ -13,12 +13,12 @@
                 <el-table-column
                   property="registe_time"
                   label="注册日期"
-                  width="200">
+                  width="220">
                 </el-table-column>
                 <el-table-column
                   property="username"
                   label="用户姓名"
-                  width="120">
+                  width="220">
                 </el-table-column>
                 <el-table-column
                   property="city"

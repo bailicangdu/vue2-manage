@@ -41,6 +41,22 @@ npm run dev
 
 ```
 
+
+# 效果演示
+
+[查看效果请戳这里](http://cangdu.org/manage/)
+
+在后台系统添加数据后可以到前端网址查看效果
+
+#### 前端网址
+[查看前端网址请戳这里](http://cangdu.org:8001/)（请用chrome手机模式预览）
+
+### 移动端扫描下方二维码
+
+![](https://github.com/bailicangdu/node-elm/blob/master/ewm.png)
+
+
+
 # 功能列表
 
 - [x] 登陆/注销
@@ -54,15 +70,6 @@ npm run dev
 - [x] 管理员设置
 - [x] 图表📈
 - [x] 富文本编辑器
-
-
-# 项目截图
-
-## 添加商店
-![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/addshop.png)
-
-## 添加食品
-![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/addfood.png)
 
 
 ### License
