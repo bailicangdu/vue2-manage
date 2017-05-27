@@ -1,7 +1,7 @@
 
 # project
 
-此项目是后台项目[node-elm](https://github.com/bailicangdu/node-elm) 的数据管理系统。
+此项目是后台项目[node-elm](https://github.com/bailicangdu/node-elm) 的后台管理系统。
 
 
 # 说明
