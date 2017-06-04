@@ -55,7 +55,7 @@ npm run local (访问本地后台系统，需运行node-elm后台系统)
 
 ###### 移动端扫描下方二维码
 
-![](https://github.com/bailicangdu/node-elm/blob/master/ewm.png)
+![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/ewm.png)
 
 
 # 功能列表
