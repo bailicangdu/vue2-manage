@@ -180,12 +180,12 @@
 					promotion_info: '',
 					float_delivery_fee: 5, //运费
 					float_minimum_order_amount: 20, //起价
-					is_premium: false,
-					delivery_mode: false,
-					new: false,
-					bao: false,
-					zhun: false,
-					piao: false,
+					is_premium: true,
+					delivery_mode: true,
+					new: true,
+					bao: true,
+					zhun: true,
+					piao: true,
 					startTime: '',
        	 			endTime: '',
        	 			image_path: '',
