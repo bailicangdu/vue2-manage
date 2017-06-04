@@ -241,7 +241,7 @@
                         })
                     })
                 }catch(err){
-                    throw new Error('获取食品种类失败', err);
+                    console.log('获取食品种类失败', err);
                 }
             },
             async getFoods(){
@@ -326,7 +326,7 @@
                         type: 'error',
                         message: err.message
                     });
-                    console.error('删除食品失败')
+                    console.log('删除食品失败')
                 }
             },
             handleServiceAvatarScucess(res, file) {

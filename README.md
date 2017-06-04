@@ -35,7 +35,10 @@ cd vue2-manage  
 
 npm install
 
-npm run dev 
+npm run dev (访问线上后台系统)
+
+npm run local (访问本地后台系统，需运行node-elm后台系统)
+
 
 访问: http://localhost:8002
 

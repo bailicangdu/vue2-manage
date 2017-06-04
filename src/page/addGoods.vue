@@ -330,6 +330,11 @@
 					            	type: 'success',
 					            	message: '添加成功'
 					          	});
+							}else{
+								this.$message({
+					            	type: 'error',
+					            	message: result.message
+					          	});
 							}
 						}catch(err){
 							console.log(err)

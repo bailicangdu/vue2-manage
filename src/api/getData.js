@@ -38,7 +38,7 @@ export const apiAllCount = () => fetch('/statis/api/count');
 export const apiAllRecord = () => fetch('/statis/api/all');
 
 /**
- * 用户注册量求量
+ * 用户注册量
  */
 
 export const userCount = date => fetch('/statis/user/' + date + '/count');
@@ -51,13 +51,19 @@ export const orderCount = date => fetch('/statis/order/' + date + '/count');
 
 
 /**
- * 超级管理员列表
+ * 某一天管理员注册量
+ */
+
+export const adminDayCount = date => fetch('/statis/admin/' + date + '/count');
+
+/**
+ * 管理员列表
  */
 
 export const adminList = data => fetch('/admin/all', data);
 
 /**
- * 超级管理员列表
+ * 管理员数量
  */
 
 export const adminCount = () => fetch('/admin/count');
@@ -162,7 +168,7 @@ export const getFoodsCount = data => fetch('/shopping/v2/foods/count', data);
 export const getMenu = data => fetch('/shopping/v2/menu', data);
 
 /**
- * 获取menu列表
+ * 获取menu详情
  */
 
 export const getMenuById = category_id => fetch('/shopping/v2/menu/' + category_id);

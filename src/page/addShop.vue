@@ -262,7 +262,7 @@
     					}
     				})
     			}catch(err){
-    				console.error(err);
+    				console.log(err);
     			}
     		},
     		async querySearchAsync(queryString, cb) {
@@ -277,7 +277,7 @@
 		    				cb(cityList)
 	    				}
 	    			}catch(err){
-	    				console.error(err)
+	    				console.log(err)
 	    			}
     			}
 		    },
@@ -402,7 +402,7 @@
 							}
 							console.log(result)
 						}catch(err){
-							console.error(err)
+							console.log(err)
 						}
 					} else {
 						this.$notify.error({

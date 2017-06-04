@@ -42,14 +42,27 @@ compiler.plugin('compilation', function (compilation) {
 })
 
 // proxy api requests
-Object.keys(proxyTable).forEach(function (context) {
-  var options = proxyTable[context]
-  if (typeof options === 'string') {
-    options = { target: options }
-  }
-  app.use(proxyMiddleware(options.filter || context, options))
-})
+// Object.keys(proxyTable).forEach(function (context) {
+//   var options = proxyTable[context]
+//   if (typeof options === 'string') {
+//     options = { target: options }
+//   }
+//   app.use(proxyMiddleware(options.filter || context, options))
+// })
 
+var context = config.dev.context
+
+switch(process.env.NODE_ENV){
+    case 'local': var proxypath = 'http://localhost:8001'; break;
+    case 'online': var proxypath = 'http://cangdu.org:8001'; break;
+}
+var options = {
+    target: proxypath,
+    changeOrigin: true,
+}
+if (context.length) {
+    app.use(proxyMiddleware(context, options))
+}
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())
 

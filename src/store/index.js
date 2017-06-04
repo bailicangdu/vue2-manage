@@ -26,7 +26,7 @@ const actions = {
 				throw new Error(res)
 			}
 		}catch(err){
-			console.error('获取管理员信息失败', err)
+			console.log('获取管理员信息失败', err)
 		}
 	}
 }

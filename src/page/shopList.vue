@@ -188,7 +188,7 @@
                         }
                     })
                 }catch(err){
-                    throw new Error('获取商铺种类失败', err);
+                    console.log('获取商铺种类失败', err);
                 }
             },
             async getResturants(){
@@ -246,7 +246,7 @@
                         type: 'error',
                         message: err.message
                     });
-                    console.error('删除店铺失败')
+                    console.log('删除店铺失败')
                 }
             },
             async querySearchAsync(queryString, cb) {
@@ -261,7 +261,7 @@
                             cb(cityList)
                         }
                     }catch(err){
-                        console.error(err)
+                        console.log(err)
                     }
                 }
             },

@@ -15,7 +15,7 @@
         props: ['sevenDate', 'sevenDay'],
         methods: {
             initData(){
-                const colors = ['#d14a61', '#5793f3', '#675bba'];
+                const colors = ['#d14a61', '#5793f3', '#675bba', '#13CE66'];
                 const option = {
                     color: colors,
                     title: {
@@ -26,7 +26,7 @@
                         trigger: 'axis'
                     },
                     legend: {
-                        data:['API请求量', '新注册用户', '新增订单']
+                        data:['API请求量', '新注册用户', '新增订单', '新增管理员']
                     },
                     toolbox: {
                         show: true,
@@ -49,7 +49,7 @@
                           type: 'value',
                           name: 'API请求量',
                           min: 0,
-                          max: 10000,
+                          max: 50000,
                           position: 'left',
                           axisLine: {
                               lineStyle: {
@@ -104,6 +104,18 @@
                             name:'新增订单',
                             type:'line',
                             data:this.sevenDate[2],
+                            yAxisIndex: 1,
+                            markPoint: {
+                                data: [
+                                    {type: 'max', name: '最大值'},
+                                    {type: 'min', name: '最小值'}
+                                ]
+                            },
+                        },
+                        {
+                            name:'新增管理员',
+                            type:'line',
+                            data:this.sevenDate[3],
                             yAxisIndex: 1,
                             markPoint: {
                                 data: [

@@ -13,8 +13,13 @@
 		      <el-table-column
 		        prop="create_time"
 		        label="注册日期"
-		        width="180">
+		        width="220">
 		      </el-table-column>
+              <el-table-column
+                prop="city"
+                label="地址"
+                width="180">
+              </el-table-column>
 		      <el-table-column
 		        prop="admin"
 		        label="权限">
@@ -86,6 +91,7 @@
                     			create_time: item.create_time,
 						        user_name: item.user_name,
 						        admin: item.admin,
+                                city: item.city,
                     		}
                     		this.tableData.push(tableItem)
                     	})

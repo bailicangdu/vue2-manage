@@ -5,8 +5,8 @@
   "author": "cangdu <1264889788@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
+    "dev": "cross-env NODE_ENV=online node build/dev-server.js",
+    "local": "cross-env NODE_ENV=local node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
