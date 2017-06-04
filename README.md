@@ -1,12 +1,10 @@
 
-# project
+# About
 
-此项目是后台项目[node-elm](https://github.com/bailicangdu/node-elm) 的后台管理系统。
+此项目是 vue + element-ui 构建的后台管理系统，也是后台项目[node-elm](https://github.com/bailicangdu/node-elm) 的管理系统，所有的数据都是从服务器实时获取的真实数据，具有真实的注册、登陆、管理数据、权限验证等功能。
 
 
 # 说明
-
->  vue + element-ui 构建的后台管理系统
 
 >  如果对您对此项目有兴趣，可以点 "Star" 支持一下 谢谢！ ^_^
 
@@ -58,7 +56,6 @@ npm run local (访问本地后台系统，需运行node-elm后台系统)
 ###### 移动端扫描下方二维码
 
 ![](https://github.com/bailicangdu/node-elm/blob/master/ewm.png)
-
 
 
 # 功能列表

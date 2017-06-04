@@ -12,7 +12,12 @@
 			</el-row>
             <el-row :gutter="20">
                 <el-col :span="5"><div class="data_list all_head"><span class="data_num head">总数据：</span></div></el-col>
-                <el-col :span="5"><div class="data_list"><span class="data_num">{{allApiCount}}</span> API请求量</div></el-col>
+                <el-col :span="5">
+                    <div class="data_list">
+                        <span class="data_num">{{allApi}}<span class="wan" v-if="allApiCount > 10000">万</span>
+                        </span> API请求量
+                    </div>
+                </el-col>
                 <el-col :span="4"><div class="data_list"><span class="data_num">{{allUserCount}}</span> 注册用户</div></el-col>
                 <el-col :span="4"><div class="data_list"><span class="data_num">{{allOrderCount}}</span> 订单</div></el-col>
                 <el-col :span="4"><div class="data_list"><span class="data_num">{{allAdminCount}}</span> 管理员</div></el-col>
@@ -54,6 +59,11 @@
     		}
     		this.getSevenData();
     	},
+        computed: {
+            allApi: function (){
+                return this.allApiCount < 10000 ? this.allApiCount : (this.allApiCount/10000).toFixed(2)
+            }
+        },
     	methods: {
     		async initData(){
     			const today = dtime().format('YYYY-MM-DD')
@@ -131,4 +141,7 @@
             background: #20A0FF;
         }
 	}
+    .wan{
+        .sc(16px, #333)
+    }
 </style>

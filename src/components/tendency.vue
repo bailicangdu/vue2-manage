@@ -49,7 +49,7 @@
                           type: 'value',
                           name: 'API请求量',
                           min: 0,
-                          max: 50000,
+                          max: 100000,
                           position: 'left',
                           axisLine: {
                               lineStyle: {
