@@ -1,8 +1,9 @@
 {
   "name": "vue2-manage",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "vue2-manage",
   "author": "cangdu <1264889788@qq.com>",
+  "license": "GPL",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=online node build/dev-server.js",
