@@ -135,7 +135,7 @@
             }
         }
         .today_head{
-            background: #13CE66;
+            background: #FF9800;
         }
         .all_head{
             background: #20A0FF;

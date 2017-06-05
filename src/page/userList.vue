@@ -8,7 +8,7 @@
                 style="width: 100%">
                 <el-table-column
                   type="index"
-                  width="50">
+                  width="100">
                 </el-table-column>
                 <el-table-column
                   property="registe_time"
