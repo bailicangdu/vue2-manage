@@ -56,7 +56,7 @@
                           type: 'value',
                           name: 'API请求量',
                           min: 0,
-                          max: 100000,
+                          max: 200000,
                           position: 'left',
                           axisLine: {
                               lineStyle: {
@@ -71,7 +71,7 @@
                           type: 'value',
                           name: '用户、订单',
                           min: 0,
-                          max: 100,
+                          max: 400,
                           position: 'right',
                           axisLine: {
                               lineStyle: {
