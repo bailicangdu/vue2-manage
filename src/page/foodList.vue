@@ -5,36 +5,38 @@
             <el-table
                 :data="tableData"
                 @expand='expand'
+                :expand-row-keys='expendRow'
+                :row-key="row => row.index"
                 style="width: 100%">
                 <el-table-column type="expand">
                   <template scope="props">
                     <el-form label-position="left" inline class="demo-table-expand">
                       <el-form-item label="食品名称">
-                        <span>{{ selectTable.name }}</span>
+                        <span>{{ props.row.name }}</span>
                       </el-form-item>
                       <el-form-item label="餐馆名称">
-                        <span>{{ selectTable.restaurant_name }}</span>
+                        <span>{{ props.row.restaurant_name }}</span>
                       </el-form-item>
                       <el-form-item label="食品 ID">
-                        <span>{{ selectTable.item_id }}</span>
+                        <span>{{ props.row.item_id }}</span>
                       </el-form-item>
                       <el-form-item label="餐馆 ID">
-                        <span>{{ selectTable.restaurant_id }}</span>
+                        <span>{{ props.row.restaurant_id }}</span>
                       </el-form-item>
                       <el-form-item label="食品介绍">
-                        <span>{{ selectTable.description }}</span>
+                        <span>{{ props.row.description }}</span>
                       </el-form-item>
                       <el-form-item label="餐馆地址">
-                        <span>{{ selectTable.restaurant_address }}</span>
+                        <span>{{ props.row.restaurant_address }}</span>
                       </el-form-item>
                       <el-form-item label="食品评分">
-                        <span>{{ selectTable.rating }}</span>
+                        <span>{{ props.row.rating }}</span>
                       </el-form-item>
                       <el-form-item label="食品分类">
-                        <span>{{ selectTable.category_name }}</span>
+                        <span>{{ props.row.category_name }}</span>
                       </el-form-item>
                       <el-form-item label="月销量">
-                        <span>{{ selectTable.month_sales }}</span>
+                        <span>{{ props.row.month_sales }}</span>
                       </el-form-item>
                     </el-form>
                   </template>
@@ -191,6 +193,7 @@
 					],
 		        },
 		        specsFormVisible: false,
+                expendRow: [],
             }
         },
         created(){
@@ -247,7 +250,7 @@
             async getFoods(){
                 const Foods = await getFoods({offset: this.offset, limit: this.limit, restaurant_id: this.restaurant_id});
                 this.tableData = [];
-                Foods.forEach(item => {
+                Foods.forEach((item, index) => {
                     const tableData = {};
                     tableData.name = item.name;
                     tableData.item_id = item.item_id;
@@ -258,6 +261,7 @@
                     tableData.category_id = item.category_id;
                     tableData.image_path = item.image_path;
                     tableData.specfoods = item.specfoods;
+                    tableData.index = index;
                     this.tableData.push(tableData);
                 })
             },
@@ -290,7 +294,10 @@
             expand(row, status){
             	if (status) {
             		this.getSelectItemData(row)
-            	}
+            	}else{
+                    const index = this.expendRow.indexOf(row.index);
+                    this.expendRow.splice(index, 1)
+                }
             },
             handleEdit(row) {
             	this.getSelectItemData(row, 'edit')
@@ -300,7 +307,12 @@
             	const restaurant = await getResturantDetail(row.restaurant_id);
             	const category = await getMenuById(row.category_id)
                 this.selectTable = {...row, ...{restaurant_name: restaurant.name, restaurant_address: restaurant.address, category_name: category.name}};
+
                 this.selectMenu = {label: category.name, value: row.category_id}
+                this.tableData.splice(row.index, 1, {...this.selectTable}); 
+                this.$nextTick(() => {
+                    this.expendRow.push(row.index);
+                })  
                 if (type == 'edit' && this.restaurant_id != row.restaurant_id) {
                 	this.getMenu();
                 }
@@ -393,7 +405,7 @@
     }
     .Pagination{
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         margin-top: 8px;
     }
     .avatar-uploader .el-upload {

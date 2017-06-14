@@ -333,7 +333,7 @@
     }
     .Pagination{
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         margin-top: 8px;
     }
     .avatar-uploader .el-upload {

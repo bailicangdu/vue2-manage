@@ -25,7 +25,7 @@
                   label="注册地址">
                 </el-table-column>
             </el-table>
-            <div class="Pagination" style="text-align: right;margin-top: 10px;">
+            <div class="Pagination" style="text-align: left;margin-top: 10px;">
                 <el-pagination
                   @size-change="handleSizeChange"
                   @current-change="handleCurrentChange"

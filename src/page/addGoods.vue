@@ -330,6 +330,18 @@
 					            	type: 'success',
 					            	message: '添加成功'
 					          	});
+					          	this.foodForm = {
+				    				name: '',
+				    				description: '',
+				    				image_path: '',
+				    				activity: '',
+				    				attributes: [],
+				    				specs: [{
+				    					specs: '默认',
+							          	packing_fee: 0,
+							          	price: 20,
+				    				}],
+				    			}
 							}else{
 								this.$message({
 					            	type: 'error',
