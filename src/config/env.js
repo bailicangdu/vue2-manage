@@ -8,12 +8,14 @@
  */
 let baseUrl = ''; 
 let routerMode = 'history';
-let baseImgPath = 'http://cangdu.org/img/';
+let baseImgPath;
 
 if (process.env.NODE_ENV == 'development') {
 	//baseUrl = 'http://cangdu.org:8001';
+    baseImgPath = 'http://cangdu.org:8001/img/';
 }else{
 	baseUrl = 'http://cangdu.org:8001';
+    baseImgPath = 'http://cangdu.org:8001/img/';
 }
 
 export {
