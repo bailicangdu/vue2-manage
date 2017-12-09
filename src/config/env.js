@@ -11,8 +11,8 @@ let routerMode = 'history';
 let baseImgPath;
 
 if (process.env.NODE_ENV == 'development') {
-	//baseUrl = 'http://cangdu.org:8001';
-    baseImgPath = 'http://localhost:8001/img/';
+	baseUrl = 'http://cangdu.org:8001';
+    baseImgPath = 'http://cangdu.org:8001/img/';
 }else{
 	baseUrl = 'http://cangdu.org:8001';
     baseImgPath = 'http://cangdu.org:8001/img/';
