@@ -7,15 +7,15 @@
  * 
  */
 let baseUrl = ''; 
-let routerMode = 'history';
+let routerMode = 'hash';
 let baseImgPath;
 
 if (process.env.NODE_ENV == 'development') {
 	baseUrl = '';
     baseImgPath = '/img/';
 }else{
-	baseUrl = '//elm.cangdu.org';
-    baseImgPath = '//elm.cangdu.org/img/';
+	baseUrl = 'http://elm.cangdu.org';
+    baseImgPath = 'http://elm.cangdu.org/img/';
 }
 
 export {
