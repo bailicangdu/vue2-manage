@@ -31,7 +31,7 @@ git clone https://github.com/bailicangdu/vue2-manage  
 
 cd vue2-manage  
 
-npm install
+npm install 或 yarn(推荐)
 
 npm run dev (访问线上后台系统)
 
