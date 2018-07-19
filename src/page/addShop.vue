@@ -76,7 +76,7 @@
 							}">
 						</el-time-select>
 					</el-form-item>
-					
+
 					<el-form-item label="上传店铺头像">
 						<el-upload
 						  class="avatar-uploader"
@@ -142,10 +142,10 @@
 					      align="cneter"
 					      label="活动详情">
 					    </el-table-column>
-					    <el-table-column 
-					    	label="操作" 
+					    <el-table-column
+					    	label="操作"
 					    	width="120">
-					    <template scope="scope">
+					    <template slot-scope="scope">
 					        <el-button
 					          size="small"
 					          type="danger"
@@ -191,7 +191,7 @@
        	 			image_path: '',
        	 			business_license_image: '',
        	 			catering_service_license_image: '',
-       	 			
+
 		        },
 		        rules: {
 					name: [
@@ -336,7 +336,7 @@
 		        		this.$message({
 				            type: 'info',
 				            message: '请输入活动详情'
-				        }); 
+				        });
 		        		return
 		        	}
 		          	let newObj = {};
@@ -368,14 +368,14 @@
 					        	name: '进店领券',
 					        	description: value,
 		          			}
-		          			break;			
+		          			break;
 		          	}
 		          	this.activities.push(newObj);
 		        }).catch(() => {
 		          	this.$message({
 		            	type: 'info',
 		            	message: '取消输入'
-		          	});       
+		          	});
 		        });
 		    },
 		    handleDelete(index){
@@ -414,7 +414,7 @@
 				       	 			endTime: '',
 				       	 			image_path: '',
 				       	 			business_license_image: '',
-				       	 			catering_service_license_image: '',	
+				       	 			catering_service_license_image: '',
 						        };
 						        this.selectedCategory = ['快餐便当', '简餐'];
 						        this.activities = [{

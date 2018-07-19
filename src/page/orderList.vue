@@ -9,7 +9,7 @@
                 :row-key="row => row.index"
 			    style="width: 100%">
 			    <el-table-column type="expand">
-			      <template scope="props">
+			      <template slot-scope="props">
 			        <el-form label-position="left" inline class="demo-table-expand">
 			          <el-form-item label="用户名" >
 			            <span>{{ props.row.user_name }}</span>
@@ -80,7 +80,7 @@
             this.initData();
         },
         mounted(){
-            
+
         },
         methods: {
             async initData(){
@@ -125,10 +125,10 @@
 	            	const userInfo = await getUserInfo(row.user_id);
 	            	const addressInfo = await getAddressById(row.address_id);
 
-	                this.tableData.splice(row.index, 1, {...row, ...{restaurant_name: restaurant.name, restaurant_address: restaurant.address, address: addressInfo.address, user_name: userInfo.username}}); 
+	                this.tableData.splice(row.index, 1, {...row, ...{restaurant_name: restaurant.name, restaurant_address: restaurant.address, address: addressInfo.address, user_name: userInfo.username}});
                     this.$nextTick(() => {
                         this.expendRow.push(row.index);
-                    })	
+                    })
 	            }else{
                     const index = this.expendRow.indexOf(row.index);
                     this.expendRow.splice(index, 1)
