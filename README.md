@@ -60,7 +60,7 @@ npm run local (访问本地后台系统，需运行node-elm后台系统)
 
 # 功能列表
 
-- [x] 登陆/注销 -- 完成 
+- [x] 登陆/注销 -- 完成
 - [x] 添加商铺 -- 完成
 - [x] 添加商品 -- 完成
 - [x] 数据展示 -- 完成
@@ -85,3 +85,9 @@ npm run local (访问本地后台系统，需运行node-elm后台系统)
 ## License
 
 [GPL](https://github.com/bailicangdu/vue2-manage/blob/master/COPYING)
+
+
+# Donate
+如果觉得这个项目对您有帮助，可以资助一下作者，您的资助将会用做维持服务器的运行。(毕竟服务器对作者来说是一个不小的开销😂)
+
+<img src="https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/pay.png" width="440" height="250"/>

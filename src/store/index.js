@@ -23,10 +23,10 @@ const actions = {
 			if (res.status == 1) {
 				commit('saveAdminInfo', res.data);
 			}else{
-				throw new Error(res)
+				throw new Error(res.type)
 			}
 		}catch(err){
-			console.log('您尚未登陆或者session失效')
+			// console.log(err.message)
 		}
 	}
 }

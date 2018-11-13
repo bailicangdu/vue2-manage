@@ -146,6 +146,7 @@
         },
         created(){
             this.initData();
+            console.log(11111)
         },
     	components: {
     		headTop,
