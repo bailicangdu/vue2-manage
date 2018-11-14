@@ -81,13 +81,12 @@ npm run local (访问本地后台系统，需运行node-elm后台系统)
 <img src="https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/manage_shop.png"/>
 
 
+# Donate
+
+[donate](https://github.com/bailicangdu/vue2-elm/blob/master/donate.md)
+
 
 # License
 
 [GPL](https://github.com/bailicangdu/vue2-manage/blob/master/COPYING)
 
-
-## Donate
-如果觉得这个项目对您有帮助，可以资助一下作者，您的资助将会用做维持服务器的运行。(因为服务器是一个不小的开销☹️)
-
-<img src="https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/pay.png" width="440" height="250"/>
