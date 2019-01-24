@@ -10,7 +10,7 @@ export const login = data => fetch('/admin/login', data, 'POST');
  * 退出
  */
 
-export const signout = () => fetch('/admin/singout');
+export const signout = () => fetch('/admin/signout');
 
 /**
  * 获取用户信息
