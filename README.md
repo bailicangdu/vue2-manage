@@ -47,16 +47,11 @@ npm run local (访问本地后台系统，需运行node-elm后台系统)
 
 #### (可在后台管理系统添加商铺，食品等数据，并在前端地址查看效果)
 
-[查看效果请戳这里](http://cangdu.org/manage/)
+[查看效果请戳这里](https://cangdu.org/manage/)
 
 
 ### 前端项目网址
-[前端网址请戳这里](http://cangdu.org/elm)（请用chrome手机模式预览）
-
-###### 移动端扫描下方二维码
-
-![](https://github.com/bailicangdu/vue2-manage/blob/master/screenshots/ewm.png)
-
+[前端网址请戳这里](https://cangdu.org/elm)（请用chrome手机模式预览）
 
 # 功能列表
 
