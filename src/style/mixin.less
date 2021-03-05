@@ -1,72 +1,71 @@
-@blue: #3190e8;  
+@blue: #3190e8;
 @bc: #e4e4e4;
-@fc:#fff;
+@fc: #fff;
 
 // 背景图片地址和大小
-.bis(@url) { 
+.bis(@url) {
 	background-image: url(@url);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
 //定位全屏
-.allcover{
-	position:absolute;
-	top:0;
-	right:0;
+.allcover {
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 //transform上下左右居中
-.ctt {  
+.ctt {
 	position: absolute;
 	top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 //定位上下左右居中
-.ctp(@width, @height) {  
+.ctp(@width, @height) {
 	position: absolute;
 	top: 50%;
-    left: 50%;
-    margin-top: -@height/2;
-    margin-left: -@width/2;
+	left: 50%;
+	margin-top: -@height / 2;
+	margin-left: -@width / 2;
 }
 
 //定位上下居中
-.tb {  
+.tb {
 	position: absolute;
 	top: 50%;
-    transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
 //定位左右居中
-.lr {  
+.lr {
 	position: absolute;
 	left: 50%;
-    transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 //宽高
-.wh(@width, @height){
+.wh(@width, @height) {
 	width: @width;
 	height: @height;
 }
 
 //字体大小、行高、字体
-.ft(@size, @line-height) {  
+.ft(@size, @line-height) {
 	font-size: @size;
-	line-height:@line-height;
+	line-height: @line-height;
 }
 
 //字体大小，颜色
-.sc(@size, @color){
+.sc(@size, @color) {
 	font-size: @size;
 	color: @color;
 }
 
 //flex 布局和 子元素 对其方式
-.fj(@type: space-between){
+.fj(@type: space-between) {
 	display: flex;
 	justify-content: @type;
-
 }

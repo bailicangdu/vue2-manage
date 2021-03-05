@@ -1,15 +1,11 @@
 <template>
-    <div class="fillcontain">
-        uploadImg
-    </div>
+	<div class="fillcontain">uploadImg</div>
 </template>
 
 <script>
-    export default {
-    	
-    }
+export default {};
 </script>
 
 <style lang="less">
-	@import '../style/mixin';
+@import '../style/mixin';
 </style>
