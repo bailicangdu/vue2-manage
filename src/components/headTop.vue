@@ -25,6 +25,7 @@
     		return {
     			baseImgPath,
 				ttttttttttt,
+				zzzzzzzzzzz,
     		}
     	},
     	created(){
