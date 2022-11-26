@@ -26,6 +26,7 @@
     			baseImgPath,
 				ttttttttttt,
 				zzzzzzzzzzz,
+				mmmmmmmmmmm
     		}
     	},
     	created(){
