@@ -24,6 +24,7 @@
     	data(){
     		return {
     			baseImgPath,
+				test,
     		}
     	},
     	created(){
