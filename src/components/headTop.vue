@@ -24,6 +24,9 @@
     	data(){
     		return {
     			baseImgPath,
+				ttttttttttt,
+				zzzzzzzzzzz,
+				mmmmmmmmmmm
     		}
     	},
     	created(){
