@@ -2,7 +2,9 @@
   "presets": [
     ["env", { "modules": false }],
     "stage-2"
-  ],
+  ],sadegfregrzfmrjagzjregarjezgr
+frgrgarg
+rgrgrg
   "plugins": ["transform-runtime"],
   "comments": false,
   "env": {
