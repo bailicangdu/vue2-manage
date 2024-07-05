@@ -94,7 +94,23 @@ const routes = [
 	}
 ]
 
-export default new Router({
-	routes,
-	strict: process.env.NODE_ENV !== 'production',
+const router = new VueRouter({
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes,
+    strict: process.env.NODE_ENV !== 'production',
 })
+
+// 路由守卫
+router.beforeEach((to,from,next) => {
+    if (to.path === '/login'){
+        next();
+    }
+    const user = localStorage.getItem(name);
+    if(!user && to.path !== '/login'){
+        return next('/login');
+    }
+    next();
+})
+
+export default router;
